@@ -7,6 +7,9 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('cures');
+  this.route('food');
+  this.route('puzzles');
 });
 
 export default Router;

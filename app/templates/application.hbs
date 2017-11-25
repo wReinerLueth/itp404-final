@@ -1,5 +1,20 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<h1>The Hangover Helper</h1>
 
-{{outlet}}
+<h4>Are you feeling especially hungover today?
+    <span>
+        <button type="button" id="quest_1">
+            Yeah...
+        </button>
+    </span>
+</h4>
+<h4>Does your head feel like it's being smashed by a semi?
+    <span>
+        <button type="button" id="quest_2">
+            How did you know??
+        </button>
+    </span>
+</h4>
+
+<p>The following checklist is to aid your recovery process.</p>
+
+{{to-do-list}}
