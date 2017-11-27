@@ -3,7 +3,10 @@
     10am - Drink a glass of water
 </p>
 <p>{{input type="checkbox" name="food1" checked=false}}
-    10:30am - Order/Cook Food
+    10:30am - Order/Cook 
+    {{#link-to 'food'}}
+        Food
+    {{/link-to}}
 </p>
 <p>{{input type="checkbox" name="cure1" checked=false}}
     10:30am - Make a 
@@ -17,4 +20,26 @@
     or might we recommend some 
     <a href="https://www.hulu.com/south-park">South Park</a>
 </p>
+<p>{{input type="checkbox" name="relax2" checked=false}}
+    12pm - Take a nap
+</p>
+<p>{{input type="checkbox" name="clean1" checked=false}}
+    1:30ish - Take a shower
+</p>
+<p>{{input type="checkbox" name="food2" checked=false}}
+    2:30pm - Order/Cook 
+    {{#link-to 'food'}}
+        food
+    {{/link-to}}
+</p>
+<p>{{input type="checkbox" name="workout" checked=false}}
+    4:30pm - Workout (trust us)
+</p>
+<p>{{input type="checkbox" name="drink2" checked=false}}
+    After Workout - Drink a sports drink and/or water
+</p>
+<p>{{input type="checkbox" name="clean2" checked=false}}
+    After Workout - Take a shower
+</p>
+
 {{!-- Add some more/maybe make it read out of an array so it can change based on the person --}}
