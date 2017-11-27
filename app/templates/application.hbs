@@ -1,20 +1,27 @@
-<h1>The Hangover Helper</h1>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="/home">The Hangover Helper</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-<h4>Are you feeling especially hungover today?
-    <span>
-        <button type="button" id="quest_1">
-            Yeah...
-        </button>
-    </span>
-</h4>
-<h4>Does your head feel like it's being smashed by a semi?
-    <span>
-        <button type="button" id="quest_2">
-            How did you know??
-        </button>
-    </span>
-</h4>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <p class="dropdown-item">{{#link-to 'cures'}}Cures{{/link-to}}</p>
+              <p class="dropdown-item">{{#link-to 'food'}}Nearby Food{{/link-to}}</p>
+              <p class="dropdown-item">{{#link-to 'puzzles'}}Fun Puzzles!!{{/link-to}}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-<p>The following checklist is to aid your recovery process.</p>
+    <main role="main" class="container">
 
-{{to-do-list}}
+      <div class="starter-template">
+        {{outlet}}
+      </div>
+
+    </main>

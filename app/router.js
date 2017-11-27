@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('cures');
   this.route('food');
   this.route('puzzles');
+  this.route('home');
 });
 
 export default Router;
