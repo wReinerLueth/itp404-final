@@ -26,7 +26,16 @@
                     aria-expanded="false">Login</a>
                 <div class="dropdown-menu" aria-labelledby="loginDropdown">
                     <form>
-
+                        <div class="form-group">
+                            <label>Username</label>
+                            {{input required=true type="text" value=username}}
+                            <label>Password</label>
+                            {{input required=true type="password" value=password}}
+                        </div>
+                        <div class="button-container">
+                            <button class="btn btn-primary btn-sm">Login</button>
+                            <button class="btn btn-primary btn-sm">Register</button>
+                        </div>
                     </form>
                 </div>
                 </li>
