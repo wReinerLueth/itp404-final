@@ -6,44 +6,41 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navDropdown">
-        <div class="navbar-left">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="menuDropdown" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <p class="dropdown-item">{{#link-to 'cures'}}Cures{{/link-to}}</p>
-                        <p class="dropdown-item">{{#link-to 'food'}}Nearby Food{{/link-to}}</p>
-                        <p class="dropdown-item">{{#link-to 'puzzles'}}Fun Puzzles!!{{/link-to}}</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="navbar-right">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown dropdown-menu-right">
-                    <a class="nav-link dropdown-toggle" href="#" id="loginDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
-                    <div class="dropdown-menu" aria-labelledby="loginDropdown">
-                        <form>
-                            <div class="form-group">
-                                <label>Username</label>
-                                {{input required=true type="text" value=username}}
-                                <label>Password</label>
-                                {{input required=true type="password" value=password}}
-                            </div>
-                            <div class="button-container">
-                                <button class="btn btn-primary btn-sm">Login</button>
-                                <button class="btn btn-primary btn-sm">Register</button>
-                            </div>
-                        </form>
-                    </div>
-                </li>
-            </ul>
-        </div>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-link">{{#link-to 'cures'}}Cures{{/link-to}}</li>
+            <li class="nav-link">{{#link-to 'food'}}Nearby Food{{/link-to}}</li>
+            <li class="nav-link">{{#link-to 'puzzles'}}Fun Puzzles!!!!{{/link-to}}</li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="menuDropdown" href="http://example.com" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Menu</a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
+                    <p class="dropdown-item">{{#link-to 'cures'}}Cures{{/link-to}}</p>
+                    <p class="dropdown-item">{{#link-to 'food'}}Nearby Food{{/link-to}}</p>
+                    <p class="dropdown-item">{{#link-to 'puzzles'}}Fun Puzzles!!{{/link-to}}</p>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="loginDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+                <div class="dropdown-menu" aria-labelledby="loginDropdown">
+                    <form>
+                        <div class="form-group">
+                            <label>Username</label>
+                            {{input required=true type="text" value=username}}
+                            <label>Password</label>
+                            {{input required=true type="password" value=password}}
+                        </div>
+                        <div class="button-container">
+                            <button class="btn btn-primary btn-sm">Login</button>
+                            <button class="btn btn-primary btn-sm">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </li>
+        </ul>
     </div>
-
 </nav>
 
-<main role="main" class="container">
+<main role="main" class="container" style="padding-top: 70px;">
 
     <div class="starter-template">
         {{outlet}}
