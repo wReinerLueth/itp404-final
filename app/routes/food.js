@@ -4,7 +4,7 @@ import $ from 'jquery';
 export default Ember.Route.extend({
     title: 'Food Near Me',
 
-    setupController: function(controller) {
+    setupController: function (controller) {
         controller.setProperties({
             lat: this.get('lat'),
             lng: this.get('lng'),
@@ -12,7 +12,7 @@ export default Ember.Route.extend({
         });
     },
     actions: {
-        refresh(lat, lng){
+        refresh(lat, lng) {
             let mapDiv = $('#main-map')[0];
             let map;
             let currLoc;
@@ -21,12 +21,12 @@ export default Ember.Route.extend({
             let currPos;
 
             // Mostly from Assignment 3
-            if(navigator.geolocation){
-                navigator.geolocation.getCurrentPosition(function(initialPos){
-                    currPos = {lat: initialPos.coords.latitude, lng: initialPos.coords.longitude};
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (initialPos) {
+                    currPos = { lat: initialPos.coords.latitude, lng: initialPos.coords.longitude };
                     map = new google.maps.Map(mapDiv, {
                         center: new google.maps.LatLng(initialPos.coords.latitude, initialPos.coords.longitude),
-                        zoom: 12
+                        zoom: 14
                     });
                     currLoc = new google.maps.Marker({
                         position: new google.maps.LatLng(initialPos.coords.latitude, initialPos.coords.longitude),
@@ -42,7 +42,7 @@ export default Ember.Route.extend({
                         content: 'Your location',
                         position: currPos
                     });
-                    currLoc.addListener('click', function(){
+                    currLoc.addListener('click', function () {
                         currInfo.open(map, this);
                     });
 
@@ -50,28 +50,28 @@ export default Ember.Route.extend({
                     let service;
                     let request = {
                         location: currPos,
-                        radius: '500',
+                        radius: '1000',
                         query: 'restaurant'
                     };
-                    
+
                     let infowindow = new google.maps.InfoWindow();
                     service = new google.maps.places.PlacesService(map);
-                    service.textSearch(request, function(results, status) {
+                    service.textSearch(request, function (results, status) {
                         if (status == google.maps.places.PlacesServiceStatus.OK) {
                             for (var i = 0; i < results.length; i++) {
                                 let place = results[i];
-                                
+
                                 let marker = new google.maps.Marker({
                                     position: place.geometry.location,
                                     map: map
                                 });
-                                google.maps.event.addListener(marker, 'click', function(){
-                                    infowindow.setContent(place.name);
+                                google.maps.event.addListener(marker, 'click', function () {
+                                    infowindow.setContent("<h6>" + place.name + "</h6><br /><p>" + place.formatted_address + "</p>");
                                     infowindow.open(map, this);
                                 });
-                                console.log(place.name);
+                                console.log(place);
                             }
-                        }        
+                        }
                     });
                 });
             }
