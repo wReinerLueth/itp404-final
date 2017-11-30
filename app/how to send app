@@ -1,0 +1,10 @@
+ember install ember-cli-surge
+
+run 'ember surge'
+
+(need to make an account. look for video for loopback hosting)
+
+travis-ci.org
+
+click on badge (pick markdown)
+    then add to top of readme file
