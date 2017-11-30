@@ -33,6 +33,12 @@ module.exports = function(environment) {
     'style-src': "'self' 'unsafe-inline' fonts.googleapis.com maps.gstatic.com"
   };
 
+  ENV['g-map'] = {
+    exclude: true,
+    libraries: ['places', 'geometry'],
+    key: 'AIzaSyAZxDjGvMuHtuj4s1HUmyiYI20f_uJ_bGU',
+  }
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
