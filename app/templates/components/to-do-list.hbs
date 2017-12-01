@@ -1,7 +1,17 @@
-<h4>Start Here</h4>
-<p>{{input type="checkbox" name="drink1" checked=false}}
-    10am - Drink a glass of water
-</p>
+{{#each model as |item|}}
+    <h4>{{item.instructions}}</h4>
+{{/each}}
+
+<h2>Create a Checklist Item</h2>
+
+<form onsubmit={{action 'createInstructions'}}>
+    Time: <p>Add dropdown menus</p> {{input type=number value=hour placeholder="Hour"}} {{input type=number value=min placeholder="Minutes"}}
+    Instructions: {{input type=text value=instructions}}
+    <button type='submit'>Create New Item</button>
+</form>
+
+
+
 <p>{{input type="checkbox" name="food1" checked=false}}
     10:30am - Order/Cook 
     {{#link-to 'food'}}
