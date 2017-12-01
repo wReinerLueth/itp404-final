@@ -1,21 +1,42 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-    actions: {
-        createInstructions(e){
-            e.preventDefault();
+    sortChecklist: function () {
+        var modelList = this.model.store.findAll('todo');
 
-            this.store.createRecord('todo', {
+
+        var sorted = modelList.sort(function(a, b) {
+
+                if (a[0] > b[0])
+                    return 1;
+                else if (a[0] < b[0])
+                    return -1;
+
+                return 0;
+
+            })
+
+            console.log(sorted)
+    },
+    actions: {
+        createInstructions(e) {
+            e.preventDefault();
+            console.log(this.get('task'));
+            console.log(this.get('time'));
+
+            let todo = this.store.createRecord('todo', {
                 task: this.get('task'),
                 time: this.get('time')
             });
 
-            this.toast.success("You added the task");
-            todo.save();
-            
+            this.toast.success('You added the task');
+            todo.save().then(function(results){
+                console.log(results);
+            });
         },
-        deleteItem(){
-
+        deleteItem(todo) {
+            todo.deleteRecord();
+            this.toast.success('You deleted the task');
         }
     }
 });
@@ -26,16 +47,16 @@ export default Ember.Controller.extend({
 
 
 // var sorted = lastLetterSort.sort(function(a, b) {
-    
+
 //         if (a[a.length - 1] > b[b.length - 1])
 //             return 1;
 //         else if (a[a.length - 1] < b[b.length - 1])
 //             return -1;
-    
+
 //         return 0;
-    
+
 //     })
-    
+
 //     console.log(sorted)
 
 
