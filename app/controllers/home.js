@@ -24,7 +24,7 @@ export default Ember.Controller.extend({
             console.log(this.get('task'));
             console.log(this.get('time'));
 
-            let todo = this.store.createRecord('todo', {
+            let todo = this.get('store').createRecord('todo', {
                 task: this.get('task'),
                 time: this.get('time')
             });
@@ -35,6 +35,7 @@ export default Ember.Controller.extend({
         deleteItem(todo) {
             todo.deleteRecord();
             this.toast.success('You deleted the task');
+            todo.save();
         }
     }
 });

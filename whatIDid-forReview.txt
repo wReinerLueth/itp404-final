@@ -1,0 +1,42 @@
+Routes:
+    Home
+    Food
+
+Ajax Requests:
+    Home:
+        GET - home.js (routes)
+            retrieving list of todo items and displaying
+        POST (not really) - home.js (routes)
+            using push() to force model items onto page
+        PUT (doesn't connect to loopback?) - home.js (controller)
+            creates your new checklist item and appends to the list
+        DELETE - home.js (controller)
+            deletes the checklist item
+
+CSS Loading Spinner:
+    Not needed, all AJAX requests were to loopback, and didn't take enough time to require a loading indicator
+
+Unique Title:
+    Yes, they all have them.
+
+Tests:
+    none
+
+Beautiful Code:
+    :)
+
+Styling:
+    Styled to be as simple as possible, so as to not aggravate a hangover
+    Black and white
+
+Deployed to Surge and Heroku:
+    Surge:  william-lueth.surge.sh
+    Heroku: https://itp404-final-api.herokuapp.com/
+
+Toastr:
+    Have success toastr when adding or deleting a item
+
+Note:
+    Google Maps integration doesn't work on surge because it isn't a secure connection, and geolocation requires a secure connection
+    please test the food route on localhost if possible
+        will show you your current location and restaurants within 1000ft of your location (limit at 10 places)
