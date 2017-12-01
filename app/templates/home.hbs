@@ -16,7 +16,7 @@
 <p>The following checklist is to aid your recovery process.</p>
 
 {{#each model as |item|}}
-    <h4>{{item.time}} - {{item.instructions}}</h4>
+    <h4>{{item.time}} - {{item.task}}</h4>
 {{/each}}
 
 <h2>Create a Checklist Item</h2>
@@ -29,7 +29,7 @@
 
 {{!-- no more component --}}
 
-<p>{{input type="checkbox" name="food1" checked=false}}
+{{!-- <p>{{input type="checkbox" name="food1" checked=false}}
     10:30am - Order/Cook 
     {{#link-to 'food'}}
         Food
@@ -51,4 +51,4 @@
     {{input type="checkbox" name="relax2" checked=false}}
     12pm - Take a nap
 </p>
-{{!-- Add some more/maybe make it read out of an array so it can change based on the person --}}
+Add some more/maybe make it read out of an array so it can change based on the person --}}
