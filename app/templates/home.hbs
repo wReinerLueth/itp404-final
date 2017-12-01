@@ -13,13 +13,16 @@
     </span>
 </h4>
 
-<p>The following checklist is to aid your recovery process.</p>
+<h4>The following checklist is to aid your recovery process.</h4>
 
 {{#each model as |item|}}
-    <h4>{{item.time}} - {{item.task}}</h4>
+    <div>
+        <p>{{item.time}} - {{item.task}}
+        <button class="btn btn-sm btn-danger" {{action 'deleteItem' item}}>Delete</button></p>
+    </div>
 {{/each}}
 
-<h2>Create a Checklist Item</h2>
+<p>Create a Checklist Item</p>
 
 <form onsubmit={{action 'createInstructions'}}>
     Time: {{input type="time" value=time}}
