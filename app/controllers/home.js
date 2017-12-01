@@ -30,9 +30,7 @@ export default Ember.Controller.extend({
             });
 
             this.toast.success('You added the task');
-            todo.save().then(function(results){
-                console.log(results);
-            });
+            todo.save();
         },
         deleteItem(todo) {
             todo.deleteRecord();

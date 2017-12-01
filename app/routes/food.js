@@ -12,12 +12,11 @@ export default Ember.Route.extend({
         });
     },
     actions: {
-        refresh(lat, lng) {
+        refresh() {
             let mapDiv = $('#main-map')[0];
             let map;
             let currLoc;
             let currInfo;
-            let initialPos = new google.maps.LatLng(lat, lng);
             let currPos;
 
             // Mostly from Assignment 3
